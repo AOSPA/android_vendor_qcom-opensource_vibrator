@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a9e0c0f_a2553d1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000012
+      },
+      "writtenOn": "2020-12-20T17:44:13Z",
+      "side": 1,
+      "message": "not entirely sure if this works, overlaying aidls on q vendor has been booting to recovery for me.",
+      "revId": "564636e35094b27f602d15aa16686d4d24d23c41",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
