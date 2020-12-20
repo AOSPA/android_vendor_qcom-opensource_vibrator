@@ -1,9 +1,8 @@
 Common_CFlags = ["-Wall"]
 Common_CFlags += ["-Werror"]
 
-cc_library_shared {
-    name: "vendor.qti.hardware.vibrator.impl",
-    vendor: true,
+cc_defaults {
+    name: "vendor.qti.hardware.vibrator.impl_defaults",
     cflags: Common_CFlags,
     srcs: [
         "Vibrator.cpp",
@@ -13,7 +12,6 @@ cc_library_shared {
         "libcutils",
         "libutils",
         "liblog",
-        "libqtivibratoreffect",
         "libbinder_ndk",
         "android.hardware.vibrator-ndk_platform",
     ],
@@ -21,14 +19,10 @@ cc_library_shared {
     export_include_dirs: ["include"]
 }
 
-cc_binary {
-    name: "vendor.qti.hardware.vibrator.service",
-    vendor: true,
-    relative_install_path: "hw",
+cc_defaults {
+    name: "vendor.qti.hardware.vibrator.service_defaults",
     init_rc: ["vendor.qti.hardware.vibrator.service.rc"],
-    vintf_fragments: [
-        "vendor.qti.hardware.vibrator.service.xml",
-    ],
+    relative_install_path: "hw",
     cflags: Common_CFlags,
     srcs: [
         "service.cpp",
@@ -39,6 +33,49 @@ cc_binary {
         "libbase",
         "libbinder_ndk",
         "android.hardware.vibrator-ndk_platform",
+    ],
+}
+
+cc_library_shared {
+    name: "vendor.qti.hardware.vibrator.impl",
+    vendor: true,
+    defaults: ["vendor.qti.hardware.vibrator.impl_defaults"],
+    shared_libs: [
+        "libqtivibratoreffect",
+    ],
+}
+
+cc_library_shared {
+    name: "vendor.qti.hardware.vibrator.impl_vendor_overlay",
+    vendor_overlay: true,
+    stem: "vendor.qti.hardware.vibrator.impl",
+    defaults: ["vendor.qti.hardware.vibrator.impl_defaults"],
+    shared_libs: [
+        "libqtivibratoreffect_vendor_overlay",
+    ],
+}
+
+cc_binary {
+    name: "vendor.qti.hardware.vibrator.service",
+    vendor: true,
+    vintf_fragments: [
+        "vendor.qti.hardware.vibrator.service.xml",
+    ],
+    defaults: ["vendor.qti.hardware.vibrator.service_defaults"],
+    shared_libs: [
         "vendor.qti.hardware.vibrator.impl",
+    ],
+}
+
+cc_binary {
+    name: "vendor.qti.hardware.vibrator.service_vendor_overlay",
+    vendor_overlay: true,
+    vintf_fragments: [
+        "vendor.qti.hardware.vibrator.service_vendor_overlay.xml",
+    ],
+    stem: "vendor.qti.hardware.vibrator.service",
+    defaults: ["vendor.qti.hardware.vibrator.service_defaults"],
+    shared_libs: [
+        "vendor.qti.hardware.vibrator.impl_vendor_overlay",
     ],
 }
