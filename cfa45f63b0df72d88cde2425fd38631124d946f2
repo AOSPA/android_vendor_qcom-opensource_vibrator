@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6008f611_52dcb94b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000012
+      },
+      "writtenOn": "2021-05-19T12:49:21Z",
+      "side": 1,
+      "message": "This looks good to me, I don\u0027t see any reason to go a different direction since the case Qualcomm is fixing doesn\u0027t really apply to us.\n\n",
+      "revId": "cfa45f63b0df72d88cde2425fd38631124d946f2",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
