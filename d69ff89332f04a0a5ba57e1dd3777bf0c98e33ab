@@ -16,6 +16,23 @@
       "message": "why?",
       "revId": "d69ff89332f04a0a5ba57e1dd3777bf0c98e33ab",
       "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39d7f883_340ff5da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000551
+      },
+      "writtenOn": "2021-10-21T04:30:21Z",
+      "side": 1,
+      "message": "Doesn\u0027t compile without this?\nI see this - https://android.googlesource.com/platform/build/soong/+/refs/tags/android-12.0.0_r3/cc/config/vndk.go#64 as well :/ ",
+      "revId": "d69ff89332f04a0a5ba57e1dd3777bf0c98e33ab",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
     }
   ]
 }
